@@ -56,6 +56,12 @@ class AppConstants {
   static const String CREATE_ACTOR = "artist/create";
   static const String GET_ACTOR = "artist";
 
+  /* Film */
+
+  static const String CREATE_FILM = "film/create";
+  static const String GET_FILM = "film";
+
+
 
 
 

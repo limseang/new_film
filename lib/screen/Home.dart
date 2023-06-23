@@ -1,11 +1,11 @@
 import 'package:film_admin/screen/Auth/profile.dart';
-import 'package:film_admin/screen/film/film.dart';
 import 'package:film_admin/screen/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../data/model/userModel.dart';
+import 'film/Film.dart';
 
 
 class homeScreen extends StatefulWidget {
@@ -29,8 +29,6 @@ class _homeScreenState extends State<homeScreen> {
 
     });
     _pageController.jumpToPage(index,
-        // curve: Curves.easeIn,
-        // duration: Duration(milliseconds: 250)
     );
 
   }
@@ -57,8 +55,7 @@ class _homeScreenState extends State<homeScreen> {
 
           children: [
             Artical(),
-
-            FilmScreen(),
+            filmScreen(),
             Container(
               child: Center(child: Text('Profile')),
             ),
@@ -88,7 +85,7 @@ class _homeScreenState extends State<homeScreen> {
         ),
         BottomNavigationBarItem(
             icon: Icon(iconList[1]),
-            label: 'videos'
+            label: 'film'
 
         ),
         BottomNavigationBarItem(
