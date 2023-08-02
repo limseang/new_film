@@ -79,7 +79,7 @@ class _homeScreenState extends State<homeScreen> {
       unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-            icon: Icon(iconList[0]),
+            icon: ImageIcon(AssetImage('assets/icons/home.png')),
             label: 'home'
 
         ),
@@ -94,7 +94,7 @@ class _homeScreenState extends State<homeScreen> {
 
         ),
         BottomNavigationBarItem(
-            icon: Icon(iconList[3]),
+            icon: ImageIcon(AssetImage('assets/icons/account.png')),
             label: 'profile'
 
         )

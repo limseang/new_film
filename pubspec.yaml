@@ -84,6 +84,7 @@ flutter:
   assets:
     - assets/language/
     - assets/image/
+    - assets/icons/
 
   fonts:
     - family: KhmerNew

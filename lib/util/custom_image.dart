@@ -12,14 +12,16 @@ class CustomCacheImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.only(
+    return
+
+    ClipRRect(
+      borderRadius: cinema == true ? BorderRadius.only(
           topLeft: Radius.circular(radius),
           topRight: Radius.circular(radius),
           bottomLeft: Radius.circular(circularShape == false ? 0 : radius),
           bottomRight: Radius.circular(circularShape == false ? 0 : radius)
 
-      ),
+      ) : BorderRadius.circular(0),
       child: cinema == true ? Image.asset(
         imageUrl!,
         fit: BoxFit.cover,

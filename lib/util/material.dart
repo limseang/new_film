@@ -68,7 +68,33 @@ class material_App{
     );
   }
 
+  static CustomIconButtom({required String title, required Function onPressed, Color? color, width, height, AssetImage? image, Color? iconColor}){
+    return Column(
+      children: [
+        Container(
+          width: width!=null ? width.toDouble() :52,
+          height: height!=null ? height.toDouble() : 52,
+          decoration: BoxDecoration(
+            color: color != null ? color : Color(0xff51535E),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Center(
+              child: Container(
+                width: 30,
+                height: 30,
+                child: Image(image: image!,),
+              )
+          ),
+        ),
+        SizedBox(height: 10,),
+        Text(title,style: textStyleRegular.copyWith(fontSize: 12),)
+      ],
+    );
+  }
+
 }
+
+
 
 class CustomAlertDialog {
   static void alertDiaLog(BuildContext context,

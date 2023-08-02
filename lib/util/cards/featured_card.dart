@@ -2,6 +2,7 @@ import 'package:film_admin/data/model/artical_model.dart';
 import 'package:film_admin/screen/Artical/artical_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../data/model/artical_model.dart';
 import '../../data/model/artical_model.dart';
@@ -12,12 +13,6 @@ import '../video_icon.dart';
 
 
 class FeaturedCard extends StatelessWidget {
-  // final String? name;
-  // final String? content;
-  // final String? thumbnail;
-  // final String? category;
-  // final String? type;
-  // final int? like;
   final Articals? d;
   final heroTag;
   FeaturedCard({Key? key, this.d, this.heroTag});
@@ -27,16 +22,16 @@ class FeaturedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return d == null ? InkWell(
         child: Container(
-          margin: EdgeInsets.all(15),
+          // margin: EdgeInsets.all(15),
           child: Stack(
             children: <Widget>[
               Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width,
+                    width: Get.width,
                     decoration: BoxDecoration(
-                        color: Colors.black12,borderRadius: BorderRadius.circular(5),
+                        color: Colors.black12,borderRadius: BorderRadius.circular(20),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                               color: Theme.of(context).shadowColor,
@@ -57,8 +52,7 @@ class FeaturedCard extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: Container(
-                    padding:
-                    EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
                     decoration: BoxDecoration(
                         color: Colors.black26,
                         borderRadius: BorderRadius.only(
@@ -91,26 +85,18 @@ class FeaturedCard extends StatelessWidget {
         }
     ) :InkWell(
         child: Container(
-          margin: EdgeInsets.all(15),
+          width: Get.width,
+          height: Get.height,
           child: Stack(
             children: <Widget>[
               Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Colors.black12,borderRadius: BorderRadius.circular(5),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Theme.of(context).shadowColor,
-                              blurRadius: 10,
-                              offset: Offset(0, 3))
-                        ]),
-
+                    width: Get.width,
                     child: Hero(
                         tag: heroTag,
-                        child: CustomCacheImage(imageUrl: d!.thumnail , radius: 5)),
+                        child: CustomCacheImage(imageUrl: d!.thumnail , radius: 20)),
                   ),
                   VideoIcon(contentType: '${d!.type}', iconSize: 80,)
                 ],
@@ -138,8 +124,7 @@ class FeaturedCard extends StatelessWidget {
                       ),
                       Spacer(),
                       Container(
-                          padding:
-                          EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
+                          padding: EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
                           height: 30,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
@@ -161,7 +146,7 @@ class FeaturedCard extends StatelessWidget {
                             ],
                           )),
                       SizedBox(
-                        width: 10,
+                        width: 50,
                       )
                     ],
                   ),

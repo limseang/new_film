@@ -66,23 +66,6 @@ class AppConstants {
 
 
 
-  // static List<LanguageModel> languages = [
-  //   LanguageModel(
-  //       imageUrl: 'assets/images/en-flag.png',
-  //       languageName: 'English',
-  //       countryCode: 'US',
-  //       languageCode: 'en'),
-  //   LanguageModel(
-  //       imageUrl: 'assets/icons/kh-flag.png',
-  //       languageName: 'ភាសាខ្មែរ',
-  //       countryCode: 'KH',
-  //       languageCode: 'km'),
-  //   LanguageModel(
-  //       imageUrl: 'assets/images/logo Chinese.png',
-  //       languageName: '中国人',
-  //       countryCode: 'CN',
-  //       languageCode: 'zh'),
-  // ];
 
 }
 

@@ -28,6 +28,7 @@ final textStyleRegular = TextStyle(
   fontFamily: 'Inter',
   // fontFamily: Get.find<LocalizationController>().locale.languageCode == 'km'? 'Dangrek' : 'Roboto',
   fontWeight: FontWeight.w400,
+  color: Color(0xffA0A0A0),
   fontSize: Dimensions.fontSizeDefault,
 );
 
