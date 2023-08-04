@@ -40,11 +40,12 @@ class FilmModelList {
   String? runningTime;
   String? trailer;
   Null? link;
-  double? rateId;
+  int? rateId;
   Null? likeId;
+  String? featureId;
+  Null? tagId;
   String? createdAt;
   String? updatedAt;
-  String? featureId;
   int? peopleRate;
   List<Actor>? actor;
 
@@ -63,9 +64,10 @@ class FilmModelList {
         this.link,
         this.rateId,
         this.likeId,
+        this.featureId,
+        this.tagId,
         this.createdAt,
         this.updatedAt,
-        this.featureId,
         this.peopleRate,
         this.actor});
 
@@ -84,9 +86,10 @@ class FilmModelList {
     link = json['link'];
     rateId = json['rate_id'];
     likeId = json['like_id'];
+    featureId = json['feature_id'];
+    tagId = json['tag_id'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-    featureId = json['feature_id'];
     peopleRate = json['people_rate'];
     if (json['actor'] != null) {
       actor = <Actor>[];
@@ -112,9 +115,10 @@ class FilmModelList {
     data['link'] = this.link;
     data['rate_id'] = this.rateId;
     data['like_id'] = this.likeId;
+    data['feature_id'] = this.featureId;
+    data['tag_id'] = this.tagId;
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
-    data['feature_id'] = this.featureId;
     data['people_rate'] = this.peopleRate;
     if (this.actor != null) {
       data['actor'] = this.actor!.map((v) => v.toJson()).toList();

@@ -33,5 +33,20 @@ class FilmController extends GetxController implements GetxService {
     }
   }
 
+  Future rateFilm({int? film_id, int? rate})async {
+    try{
+      var response = await filmRepo.rateFilm(film_id: film_id, rate: rate);
+      if (response.statusCode == 200) {
+        var body = response.body;
+        _filmModel = FilmModel.fromJson(body);
+        _filmModelList = _filmModel!.data;
+        update();
+      }
+      return response.statusCode;
+    }catch(e){
+      print(e);
+    }
+  }
+
 
 }

@@ -1,6 +1,7 @@
 
 import 'package:film_admin/provider/auth_controller.dart';
 import 'package:film_admin/provider/film_controller.dart';
+import 'package:film_admin/screen/film/film_detail.dart';
 import 'package:film_admin/util/cards/featured_card.dart';
 import 'package:film_admin/util/material.dart';
 import 'package:film_admin/util/next_screen.dart';
@@ -391,63 +392,79 @@ class _ArticalState extends State<Artical> with AutomaticKeepAliveClientMixin {
                             onTap: () {
                               nextScreen(
                                   context,
-                                  ArticalDetail(
-                                    articalDetail: articalController
-                                        .articalsList[index],
-                                  ));
+                                Film_Detail_Screen(
+                                    filmModelList: film![index],
+                                  )
+                                 );
                             },
                             child: film![index].featureId ==
-                                'now showing'
-                                ? Stack(
-                                  children: [
-                                    Container(
-                                      alignment: Alignment.centerLeft,
-                                      width: 100,
+                                'now showing' || film![index].featureId == "1"
+                                ? Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        alignment: Alignment.centerLeft,
+                                        width: 100,
 
-                                      decoration: BoxDecoration(
-
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                              film[index].poster ?? ""),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      right: 0,
-                                      child: Container(
-                                        width: Get.width,
-                                        height: 40,
                                         decoration: BoxDecoration(
 
-                                          color: Colors.black26,
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 8.0, right: 8.0),
-                                          child: Center(
-                                            child: Text(
-                                              film[index].title ?? "",
-                                              style: textStyleRegular.copyWith(
-                                                  fontSize: 10,
-                                                  color: Colors.white
-                                              ),
-                                            ),
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                                film[index].poster ?? ""),
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
 
-                                      )
-                                    )
-                                  ],
-                                )
-                                : Container(
+                                      ),
+                                      Positioned(
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        child: Container(
+                                          width: Get.width,
+                                          height: 40,
+                                          decoration: BoxDecoration(
 
-                              width: Get.width,
-                              height: Get.height,
-                            ),
+                                            color: Colors.black26,
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 8.0, right: 8.0),
+                                            child: Center(
+                                              child: Text(
+                                                '${film[index].title}',
+                                                style: textStyleRegular.copyWith(
+                                                    fontSize: 10,
+                                                    color: Colors.white
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+
+                                        )
+                                      ),
+                                      Positioned(
+                                        top: 5,
+                                        right: 0,
+                                        left: 60,
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          width: 100,
+                                          height: 20,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(2),
+
+                                              color: Colors.white),
+                                          child: Text('${film[index].rateId ?? '0'} \/ 10 ',style: textStyleMedium.copyWith(
+                                            fontSize: 10,
+                                          ),),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                                : SizedBox()
                           );
                         },
                       ),

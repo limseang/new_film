@@ -60,6 +60,7 @@ class AppConstants {
 
   static const String CREATE_FILM = "film/create";
   static const String GET_FILM = "film";
+  static const String RATE_FILM = "rate/create";
 
 
 

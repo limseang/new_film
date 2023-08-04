@@ -55,6 +55,8 @@ dependencies:
   image_cropper: ^4.0.1
   google_fonts: ^4.0.4
   nb_utils: ^5.0.8
+  sticky_headers: ^0.3.0+2
+  flutter_rating_bar: ^4.0.1
 
 
 
